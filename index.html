@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="#">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Binary to decimal</title>
     <style>
-        .hidden {
-            display: none;
-        }
+        
     </style>
 </head>
 <body>
-    <h1>Converter</h1>
-    <h2>Binary to Decimal</h2>
-    <input type="text" name="binaryNumber" placeholder="Enter a binary number" />
-    <p class="errorMessage hidden">Veuillez entrer un nombre binaire (max. 8 digits)</p>
+    <div id="main-container">
+        <h1>Converter</h1>
+        <h2>Binary</h2>
+        <div class="input-container">
+            <input type="text" name="binaryNumber" id="binary-number" placeholder="Enter a binary number" />
+            <h2>Decimal</h2>
+            <div id="decimal"></div>
+        </div>
+        <p class="error-message hidden">Please enter a correct binary number (max. 8 digits)</p>
+    </div>
 </body>
 </html>

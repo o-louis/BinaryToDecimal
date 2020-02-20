@@ -1,15 +1,15 @@
 var Conversion = function() {
-    var decimal;
     this.input = null;
     this.errorMessage = null;
     
     this.init = function() {
         this.input = document.getElementsByName("binaryNumber")[0].value;
-        this.errorMessage = document.getElementsByClassName("errorMessage")[0];
+        this.errorMessage = document.getElementsByClassName("error-message")[0];
+        var container = document.getElementById("decimal");
         hideErrorMessage(this.errorMessage);
 
         if (this.isBinaryNumber()) {
-            decimal = this.binaryToDecimal();
+            container.innerHTML = this.binaryToDecimal();
         } else if (this.input) {
             displayErrorMessage(this.errorMessage);
         }
@@ -21,8 +21,7 @@ var Conversion = function() {
     };
 
     this.binaryToDecimal = function() {
-        var decimal = 0;
-        var length = input.length-1;
+        var decimal = 0; length = this.input.length-1;
         for (var index = length; index >= 0; index--) {
             decimal += (this.input[index] * Math.pow(2, length - index));
         }
@@ -31,10 +30,12 @@ var Conversion = function() {
 };
 
 var displayErrorMessage = function(message) {
+    document.getElementById("decimal").innerHTML = "";
     message.classList.remove("hidden");
 };
 
 var hideErrorMessage = function(message) {
+    document.getElementById("decimal").innerHTML = "";
     message.classList.add("hidden");
 };
 
